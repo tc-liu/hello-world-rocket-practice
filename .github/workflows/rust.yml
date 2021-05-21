@@ -27,4 +27,6 @@ jobs:
       - name: Run tests
         run: cargo test --verbose
       - name: Format Check
-        run:
+        run: cargo fmt --check
+      - name: Clippy Test
+        run: cargo clippy --profile test -- -D warnings -D clippy::dbg_macro
