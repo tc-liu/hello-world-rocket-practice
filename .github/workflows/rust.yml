@@ -8,10 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install latest nightly
+      - name: Install nightly 2021-05-21
         uses: actions-rs/toolchain@v1
         with:
-            toolchain: nightly
+            toolchain: nightly-2021-05-21
             override: true
             components: rustfmt, clippy
 
