@@ -1,7 +1,6 @@
 #![feature(proc_macro_hygiene, decl_macro)]
 
-#[macro_use]
-extern crate rocket;
+use rocket::{self, get, routes};
 
 #[get("/")]
 fn index() -> &'static str {
@@ -18,10 +17,8 @@ fn main() {
 
 #[cfg(test)]
 mod test {
-    use crate::rocket;
-    use crate::rocket_instance;
-    use rocket::http::Status;
-    use rocket::local::Client;
+    use crate::{rocket, rocket_instance};
+    use rocket::{http::Status, local::Client};
 
     #[test]
     fn hello_world() {
